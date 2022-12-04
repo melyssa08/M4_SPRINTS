@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "Melyssa Rojas",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd2",
+      "top": -147.2,
+      "left": 93.81,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "lcd2:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "lcd2:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "esp:D18", "lcd2:SDA", "green", [ "h0" ] ],
+    [ "esp:D19", "lcd2:SCL", "green", [ "h0" ] ]
+  ]
+}
